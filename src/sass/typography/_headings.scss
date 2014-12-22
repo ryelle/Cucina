@@ -1,0 +1,104 @@
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font__header;
+	font-weight: 600;
+	clear: both;
+}
+
+h1 {
+	@include font-size( 3.0 );
+}
+
+h2 {
+	@include font-size( 2.2 );
+	font-weight: 400;
+	color: $color__text-h2;
+}
+
+h3 {
+	@include font-size( 1.4 );
+	text-transform: uppercase;
+	color: $color__text-h3;
+}
+
+h4 {
+	@include font-size( 1.7 );
+}
+
+h5 {
+	@include font-size( 1.7 );
+}
+
+h6 {
+	@include font-size( 1.7 );
+}
+
+.site-title {
+	margin-bottom: 20px;
+	padding-top: 25px;
+	@include font-size( 6.0 );
+	line-height: 1.3;
+	text-align: center;
+
+	a, a:link, a:active, a:hover, a:visited, a:focus {
+		color: $color__text-header-site;
+		text-decoration: none;
+	}
+}
+
+.page-header {
+	text-align: center;
+
+	.taxonomy-description {
+		margin-bottom: 30px;
+		font-style: italic;
+	}
+}
+
+.page-title {
+	margin-bottom: 30px;
+	padding: 20px 30px 15px;
+	line-height: 1;
+	background-color: $color__background-header;
+	color: white;
+	font-weight: 300;
+}
+
+.entry-title {
+	margin-bottom: 3px;
+	padding: 20px 30px 15px;
+	line-height: 1;
+	background-color: $color__background-header-home;
+	color: white;
+	font-weight: 300;
+
+	.single &,
+	.page & {
+		background-color: $color__background-header;
+	}
+
+	a:link, a:visited, a:hover, a:active, a:focus {
+		color: white;
+		text-decoration: none;
+		outline: none;
+	}
+	a:focus {
+		text-decoration: underline;
+	}
+}
+
+.comments-title,
+.comment-reply-title {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.comment-reply-title {
+	@include font-size( 2.2 );
+	font-weight: 400;
+	color: $color__text-h2;
+	text-transform: none;
+}
+
+.widget-title {
+	margin-bottom: 15px;
+}

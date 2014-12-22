@@ -1,0 +1,29 @@
+a {
+	color: $color__link;
+
+	&:visited {
+		color: $color__link-visited;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__link-hover;
+	}
+}
+
+.entry-meta,
+.comment-meta,
+.jetpack-recipe-print,
+.site-footer {
+	a,
+	&:visited {
+		color: $color__link-meta;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus,
+	a:active {
+		color: darken( $color__link-meta, 10% );
+	}
+}

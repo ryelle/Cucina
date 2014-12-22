@@ -1,0 +1,27 @@
+.hentry {
+	margin-bottom: $size__spacing;
+}
+
+.singular .entry-image {
+	margin-bottom: 30px;
+}
+
+.singular .entry-meta {
+	@include font-size( 1.2 );
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
+
+.byline {
+	display: none;
+
+	.single &,
+	.group-blog & {
+		display: inline;
+	}
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}

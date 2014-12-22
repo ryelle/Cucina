@@ -1,0 +1,12 @@
+.widget {
+	margin: 0 0 30px;
+
+	/* Make sure select elements fit in widgets */
+	select {
+		max-width: 100%;
+	}
+
+	.menu {
+		margin-left: 0;
+	}
+}

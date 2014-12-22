@@ -1,0 +1,38 @@
+
+.site {
+	margin: 0 auto $size__spacing*2;
+	padding: $size__spacing $size__spacing*2;
+	width: 100%;
+	max-width: $size__site-main;
+}
+
+.content-area {
+	float: left;
+	margin: 0 (-$size__site-sidebar) 0 0;
+	width: 100%;
+}
+
+.site-main {
+	margin: 0 $size__site-sidebar 0 0;
+	padding-right: $size__spacing;
+
+	.archive & {
+		margin: 0;
+		padding-right: 0;
+	}
+}
+
+.site-content .widget-area {
+	float: right;
+	overflow: hidden;
+	width: $size__site-sidebar;
+
+	.single-post & {
+		margin-top: -60px;
+	}
+}
+
+.site-footer {
+	clear: both;
+	width: 100%;
+}

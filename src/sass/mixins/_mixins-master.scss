@@ -1,0 +1,100 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1.6) {
+	font-size: ($sizeValue * 10) + px;
+	font-size: $sizeValue + rem;
+}
+
+// Box model
+@mixin box-sizing($box-model) {
+	-webkit-box-sizing: $box-model; // Safari <= 7
+	-moz-box-sizing: $box-model; // Firefox <= 19
+	box-sizing: $box-model;
+}
+
+// Border radius
+@mixin border-radius($radius) {
+	background-clip: padding-box; /* stops bg color from leaking outside the border: */
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin: 0 auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+@mixin hide-dropdown {
+	text-indent: -9999em;
+	clip: rect(1px, 1px, 1px, 1px);
+	width: 1px;
+}
+
+@mixin show-dropdown {
+	text-indent: 0;
+	clip: auto;
+	width: auto;
+}
+
+@mixin divet( $direction, $color, $border ) {
+	background-color: $color;
+	&:before,
+	&:after {
+		content:"";
+		display: block; /* reduce the damage in FF3.0 */
+		position: absolute;
+		width: 0;
+		border-style: solid;
+		border-color: transparent $color;
+	}
+
+	@if $direction == left {
+		&:before,
+		&:after {
+			top: 12px;
+			left: -10px;
+			right: auto;
+			border-width: 10px 10px 10px 0;
+		}
+		&:before {
+			left: -11px;
+			border-color: transparent $border;
+		}
+	} @else if $direction == right {
+		&:before,
+		&:after {
+			top: 12px;
+			left: auto;
+			right: -10px;
+			border-width: 10px 0px 10px 10px;
+		}
+		&:before {
+			right: -11px;
+			border-color: transparent $border;
+		}
+	} @else if $direction == top {
+		&:before,
+		&:after {
+			top: -10px;
+			right: auto;
+			left: 20px;
+			border-color: $color transparent;
+			border-width: 0px 10px 10px 10px;
+		}
+		&:before {
+			top: -11px;
+			border-color: $border transparent;
+		}
+	}
+}

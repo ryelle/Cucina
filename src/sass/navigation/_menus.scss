@@ -1,0 +1,148 @@
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	margin-bottom: $size__spacing;
+	width: 100%;
+	border-top: 1px solid $color__border-menu;
+	border-bottom: 1px solid $color__border-menu;
+
+	@include font-size(1.5);
+	line-height: 1.1;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-align: center;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		// Second level
+		ul {
+			position: absolute;
+			z-index: 25;
+			top: 45px;
+			padding: 10px 0 10px;
+			@include hide-dropdown;
+			text-align: left;
+			background-color: white;
+			border: 1px solid $color__border-menu;
+			@include divet( top, white, $color__border-menu );
+
+			// Third level
+			ul {
+				position: relative;
+				top: 0;
+				padding-top: 0;
+				@include show-dropdown;
+
+				li a {
+					padding-left: 20px;
+				}
+			}
+
+			li {
+				padding: 0;
+				line-height: 1.25;
+			}
+
+			a {
+				width: 200px;
+				padding: 5px 10px;
+			}
+		}
+	}
+
+	li {
+		display: inline-block;
+		position: relative;
+		padding: 8px 15px 0;
+
+		&:hover > ul,
+		&.focus > ul,
+		a:focus + ul {
+			@include show-dropdown;
+		}
+	}
+
+	a {
+		display: block;
+		padding: 10px 10px 15px;
+		text-decoration: none;
+		outline: none;
+		color: $color__link-menu;
+
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a {
+		color: $color__link-hover;
+	}
+}
+
+/* Small menu */
+.menu-toggle {
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+}
+
+.comment-navigation,
+.paging-navigation,
+.post-navigation {
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+
+		a {
+			margin-right: 25px;
+		}
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+
+		a {
+			margin-left: 25px;
+		}
+	}
+
+	a {
+		display: block;
+		padding: 15px 15px 10px;
+		background-color: $color__background-button;
+		color: white;
+		text-decoration: none;
+
+		&:hover,
+		&:active {
+			background-color: darken( $color__background-button, 10% );
+		}
+
+		&:focus {
+			background-color: darken( $color__background-button, 10% );
+			text-decoration: underline;
+		}
+	}
+}

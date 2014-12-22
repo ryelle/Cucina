@@ -1,0 +1,16 @@
+body.custom-background {
+	background-size: 160px 720px;
+}
+
+#page {
+	background-color: $color__background-content;
+}
+
+.site-footer {
+	padding: 15px 0 10px;
+	@include font-size( 1.2 );
+	text-align: center;
+	text-transform: uppercase;
+	border-top: 1px solid $color__border-menu;
+	border-bottom: 1px solid $color__border-menu;
+}
