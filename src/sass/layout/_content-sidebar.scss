@@ -26,10 +26,10 @@
 	float: right;
 	overflow: hidden;
 	width: $size__site-sidebar;
+}
 
-	.single-post & {
-		margin-top: -60px;
-	}
+.single-post .widget-area {
+	margin-top: -50px;
 }
 
 .site-footer {

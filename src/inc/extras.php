@@ -33,6 +33,10 @@ function cucina_body_classes( $classes ) {
 
 	if ( is_singular() ) {
 		$classes[] = 'singular';
+
+		if ( has_post_thumbnail() ) {
+			$classes[] = 'has-image';
+		}
 	}
 
 	return $classes;
