@@ -7,6 +7,10 @@
 	var container = document.querySelector('#masonry');
 	var msnry;
 
+	if ( ! container ) {
+		return;
+	}
+
 	// initialize Masonry after all images have loaded
 	imagesLoaded( container, function() {
 		msnry = new Masonry( container, {
