@@ -36,10 +36,17 @@
 				position: relative;
 				top: 0;
 				padding-top: 0;
+				padding-bottom: 0;
+				border: none;
 				@include show-dropdown;
 
 				li a {
 					padding-left: 20px;
+				}
+
+				// Remove divet
+				&:before, &:after {
+					display: none;
 				}
 			}
 
