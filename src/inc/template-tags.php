@@ -7,18 +7,20 @@
  * @package Cucina
  */
 
-if ( ! function_exists( 'cucina_paging_nav' ) ) :
+if ( ! function_exists( 'the_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
+ *
+ * @todo Remove this function when WordPress 4.3 is released.
  */
-function cucina_paging_nav() {
+function the_posts_navigation() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'cucina' ); ?></h1>
+	<nav class="navigation posts-navigation" role="navigation">
+		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'cucina' ); ?></h2>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -35,11 +37,13 @@ function cucina_paging_nav() {
 }
 endif;
 
-if ( ! function_exists( 'cucina_post_nav' ) ) :
+if ( ! function_exists( 'the_post_navigation' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
+ *
+ * @todo Remove this function when WordPress 4.3 is released.
  */
-function cucina_post_nav() {
+function the_post_navigation() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -49,7 +53,7 @@ function cucina_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'cucina' ); ?></h1>
+		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'cucina' ); ?></h2>
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'cucina' ) );
@@ -247,6 +251,9 @@ function cucina_categorized_blog() {
  * Flush out the transients used in cucina_categorized_blog.
  */
 function cucina_category_transient_flusher() {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
 	// Like, beat it. Dig?
 	delete_transient( 'cucina_categories' );
 }

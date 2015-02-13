@@ -21,7 +21,6 @@ if ( ! function_exists( 'cucina_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function cucina_setup() {
-	global $content_width;
 
 	/*
 	 * Make theme available for translation.
@@ -33,6 +32,14 @@ function cucina_setup() {
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
+
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -50,13 +57,23 @@ function cucina_setup() {
 		'primary' => __( 'Primary Menu', 'cucina' ),
 	) );
 
-	// Enable support for Post Formats.
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+	) );
 
-	// Enable support for HTML5 markup.
-	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
+	/*
+	 * Enable support for Post Formats.
+	 * See http://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside', 'image', 'video', 'quote', 'link',
+	) );
 
-	// Setup the WordPress core custom background feature.
+	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'cucina_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => get_template_directory_uri() . '/images/kiwis.png',
@@ -67,7 +84,9 @@ endif; // cucina_setup
 add_action( 'after_setup_theme', 'cucina_setup' );
 
 /**
- * Register widgetized area and update sidebar with default widgets.
+ * Register widget area.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function cucina_widgets_init() {
 	register_sidebar( array(

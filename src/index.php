@@ -33,7 +33,7 @@ get_header(); ?>
 				<?php endwhile; ?>
 				</div>
 
-				<?php cucina_paging_nav(); ?>
+			<?php the_posts_navigation(); ?>
 
 			<?php else : ?>
 
