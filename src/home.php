@@ -7,12 +7,12 @@
 
 get_header(); ?>
 
-	<?php if ( ! is_paged() ) : ?>
-		<!-- Pull out the first post, and display it large -->
-		<?php if ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'content', 'featured' ); ?>
-		<?php endif; ?>
-	<?php endif; ?>
+	<?php
+	if ( is_front_page() && cucina_has_featured_posts() ) {
+		// Include the featured content template.
+		get_template_part( 'featured-content' );
+	}
+	?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
