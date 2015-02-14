@@ -88,7 +88,7 @@
 
 	.current_page_item > a,
 	.current-menu-item > a {
-		color: $color__link-hover;
+		color: $color__link;
 	}
 }
 
@@ -138,17 +138,17 @@
 	a {
 		display: block;
 		padding: 15px 15px 10px;
-		background-color: $color__background-button;
+		background-color: $color__background-nav-button;
 		color: white;
 		text-decoration: none;
 
 		&:hover,
 		&:active {
-			background-color: darken( $color__background-button, 10% );
+			background-color: darken( $color__background-nav-button, 10% );
 		}
 
 		&:focus {
-			background-color: darken( $color__background-button, 10% );
+			background-color: darken( $color__background-nav-button, 10% );
 			text-decoration: underline;
 		}
 	}

@@ -11,10 +11,14 @@
  * See: http://jetpack.me/support/infinite-scroll/
  */
 function cucina_jetpack_setup() {
-	add_theme_support( 'infinite-scroll', array(
-		'container' => 'masonry',
+	$infinite_args = array(
+		'container' => 'river',
 		'footer'    => 'page',
-	) );
+	);
+	if ( cucina_tiled_layout() ) {
+		$infinite_args['container'] = 'masonry';
+	}
+	add_theme_support( 'infinite-scroll', $infinite_args );
 
 	add_theme_support( 'featured-content', array(
 		'filter'     => 'cucina_get_featured_content',

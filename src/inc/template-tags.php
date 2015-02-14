@@ -7,6 +7,29 @@
  * @package Cucina
  */
 
+/**
+ * Are we using the tiled layout, or single post stream?
+ */
+function cucina_tiled_layout() {
+	$use_tile = get_theme_mod( 'tiled_layout', 'yes' );
+	return $use_tile == 'yes';
+}
+
+/**
+ * Return a "Read More" link for excerpts
+ *
+ * @return string The "Read More" HTML link, with a screen-reader'd post title.
+ */
+function cucina_continue_reading_link() {
+	/* translators: %s: Name of current post */
+	$link_text = sprintf(
+		__( 'Continue reading %s', 'cucina' ),
+		the_title( '<span class="screen-reader-text">"', '"</span>', false )
+	);
+
+	return ' <a class="read-more" href="'. esc_url( get_permalink() ) . '">' . $link_text . '</a>';
+}
+
 if ( ! function_exists( 'the_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.

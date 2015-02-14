@@ -5,7 +5,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php printf( '<a href="%s" rel="bookmark">', esc_url( get_permalink() ) ); ?>
 
 	<?php if ( has_post_thumbnail() ) : ?>
 	<div class="entry-image">
@@ -13,13 +12,13 @@
 	</div>
 	<?php endif; ?>
 
-	<header class="entry-header">
-	<?php if ( get_the_title() ) : ?>
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	<?php else: ?>
-		<div class="entry-excerpt"><?php the_excerpt(); ?></div>
-	<?php endif; ?>
-	</header><!-- .entry-header -->
+	<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 
-	</a><!-- /permalink -->
+	<div class="entry-content">
+		<?php the_excerpt(); ?>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<?php echo cucina_continue_reading_link(); ?>
+	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

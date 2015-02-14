@@ -19,20 +19,18 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-				<div id="masonry">
+				<div class="layout" <?php echo cucina_tiled_layout()? 'id="masonry"': 'id="river"'; ?>>
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php
-						/* Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
+					<?php if ( cucina_tiled_layout() ) {
+						get_template_part( 'content', 'home' );
+					} else {
 						get_template_part( 'content', get_post_format() );
-					?>
+					} ?>
 
 				<?php endwhile; ?>
-				</div>
+				</div><!-- /.layout -->
 
 				<?php the_posts_navigation(); ?>
 

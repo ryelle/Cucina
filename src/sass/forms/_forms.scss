@@ -3,6 +3,10 @@
 @import "fields";
 
 .search-form {
+	label,
+	input[type="text"] {
+		width: 100%;
+	}
 	input[type="submit"] {
 		@include screen-reader-text;
 	}

@@ -1,7 +1,7 @@
 
 .site {
 	margin: 0 auto $size__spacing*2;
-	padding: $size__spacing $size__spacing*2;
+	padding: $size__spacing $size__gutter;
 	width: 100%;
 	max-width: $size__site-main;
 }

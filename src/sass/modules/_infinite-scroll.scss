@@ -15,21 +15,38 @@
 
 #infinite-handle {
 	clear: both;
-	position: absolute;
-	bottom: 20px;
-	padding: 10px;
+	padding: 0;
 	width: 100%;
-	background: $color__background-header;
 	text-align: center;
 	cursor: pointer;
 
+	#masonry & {
+		position: absolute;
+		bottom: 20px;
+	}
+
 	span {
+		display: block;
 		padding: 0;
 		background: transparent;
+	}
+
+	span button,
+	span button:hover,
+	span button:focus { /* specificty~! */
+		display: block;
+		padding: 10px;
+		width: 100%;
+		background: $color__background-nav-button;
 		color: $color__text-header;
 		font-family: $font__header;
 		font-weight: 900;
 		@include font-size( 2.1 );
 		text-transform: uppercase;
+	}
+
+	span button:hover,
+	span button:focus {
+		background-color: darken( $color__background-nav-button, 10% );
 	}
 }

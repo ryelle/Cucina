@@ -15,7 +15,7 @@
 	imagesLoaded( container, function() {
 		msnry = new Masonry( container, {
 			itemSelector: '.hentry',
-			gutter: 50,
+			gutter: 35,
 			transitionDuration: 0
 		});
 	});

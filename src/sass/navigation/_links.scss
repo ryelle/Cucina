@@ -1,26 +1,25 @@
-a {
-	color: $color__link;
-
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
-}
-
-.entry-meta,
-.comment-meta,
-.jetpack-recipe-print,
-.site-footer {
+.entry-content {
 	a,
 	&:visited {
-		color: $color__link-meta;
+		color: $color__link-content;
 		text-decoration: none;
 	}
 
 	a:hover,
 	a:focus,
 	a:active {
-		color: darken( $color__link-meta, 10% );
+		color: darken( $color__link-content, 10% );
 	}
 }
+
+a,
+.jetpack-recipe-print a {
+	color: $color__link;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken( $color__link, 10% );
+	}
+}
+
