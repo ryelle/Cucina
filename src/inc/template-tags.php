@@ -24,6 +24,7 @@ function cucina_continue_reading_link() {
 	/* translators: %s: Name of current post */
 	$link_text = sprintf(
 		__( 'Continue reading %s', 'cucina' ),
+		'<span aria-hidden="true">&raquo;</span>' . // Arrow is visual-only
 		the_title( '<span class="screen-reader-text">"', '"</span>', false )
 	);
 
