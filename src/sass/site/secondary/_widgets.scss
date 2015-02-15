@@ -6,7 +6,21 @@
 		max-width: 100%;
 	}
 
-	.menu {
+	ul {
+		display: inline-block;
 		margin-left: 0;
+		padding-left: 0;
+		min-width: 33%;
+		list-style: none;
+	}
+
+	li {
+		padding: 4px 0 0;
+		min-height: 20px;
+		border-bottom: 1px dotted $color__border-abbr;
+
+		a {
+			text-decoration: none;
+		}
 	}
 }

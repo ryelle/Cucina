@@ -3,6 +3,7 @@
 	&:visited {
 		color: $color__link-content;
 		text-decoration: none;
+		font-weight: bold;
 	}
 
 	a:hover,
@@ -10,6 +11,11 @@
 	a:active {
 		color: darken( $color__link-content, 10% );
 	}
+}
+
+.read-more,
+.widget a {
+	font-weight: bold;
 }
 
 a,
