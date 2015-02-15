@@ -27,9 +27,9 @@
 			padding: 10px 0 10px;
 			@include hide-dropdown;
 			text-align: left;
-			background-color: white;
+			background-color: $color__background-content;
 			border: 1px solid $color__border-menu;
-			@include divet( top, white, $color__border-menu );
+			@include divet( top, $color__background-content, $color__border-menu );
 
 			// Third level
 			ul {
@@ -57,7 +57,15 @@
 
 			a {
 				width: 200px;
-				padding: 5px 10px;
+				padding: 7px 10px 3px;
+
+				&:hover, &:focus, &:active {
+					-webkit-font-smoothing:antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					color: $color__background-content;
+					background-color: $color__link-menu;
+					text-decoration: none;
+				}
 			}
 		}
 	}
@@ -81,6 +89,10 @@
 		outline: none;
 		color: $color__link-menu;
 
+		&:visited {
+			color: $color__link-menu;
+		}
+
 		&:hover, &:focus {
 			text-decoration: underline;
 		}
@@ -88,7 +100,7 @@
 
 	.current_page_item > a,
 	.current-menu-item > a {
-		color: $color__link;
+		color: $color__link-menu;
 	}
 }
 
