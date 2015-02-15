@@ -56,7 +56,7 @@
 	padding: 15px;
 }
 
-#masonry {
+.masonry {
 	.hentry {
 		max-width: 250px;
 		width: 100%;
@@ -70,15 +70,15 @@
 			text-decoration: underline;
 		}
 	}
-}
 
-.archive #masonry {
-	.hentry {
-		max-width: 270px;
+	.archive & {
+		.hentry {
+			max-width: 270px;
+		}
 	}
 }
 
-#river {
+.river {
 	.hentry {
 		padding-bottom: $size__spacing-alt;
 		border-bottom: 1px dotted $color__border-abbr;

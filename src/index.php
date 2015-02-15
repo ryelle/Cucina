@@ -18,7 +18,7 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-				<div id="masonry">
+				<div id="posts-container" class="masonry">
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 

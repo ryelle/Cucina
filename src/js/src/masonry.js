@@ -4,7 +4,7 @@
  * Initialize Masonry
  */
 ( function( $ ) {
-	var container = document.querySelector('#masonry');
+	var container = document.querySelector('.masonry');
 	var msnry;
 
 	if ( ! container ) {

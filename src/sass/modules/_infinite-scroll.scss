@@ -4,7 +4,7 @@
 	display: none;
 }
 
-.infinite-scroll #masonry {
+.infinite-scroll .masonry {
 	padding-bottom: 75px;
 }
 
@@ -20,7 +20,7 @@
 	text-align: center;
 	cursor: pointer;
 
-	#masonry & {
+	.masonry & {
 		position: absolute;
 		bottom: 20px;
 	}
