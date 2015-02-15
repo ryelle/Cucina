@@ -153,3 +153,69 @@
 		}
 	}
 }
+
+ul.menu[id*="social"] {
+	width: 100%;
+	margin: 0;
+	text-align: center;
+
+	li {
+		display: inline-block;
+		margin-bottom: 0;
+		padding-top: 0;
+		border-bottom: none;
+	}
+
+	a {
+		@include genericon;
+		margin: 5px 2px 0;
+		padding: 0 !important;
+		width: 42px;
+		height: 40px;
+		font-size: 20px;
+		line-height: 32px;
+		overflow: hidden;
+		text-align: center;
+		border-radius: 50%;
+		background-color: $color__link;
+		color: $color__background-content;
+
+		&:hover {
+			background-color: darken( $color__link, 10% );
+		}
+
+		&:before {
+			padding: 5px;
+			display: block;
+		}
+	}
+
+	a[href*="github"]:before { @include genericon-github; }
+	a[href*="dribbble"]:before,
+	a[href*="drbl.in"]:before { @include genericon-dribbble; }
+	a[href*="twitter"]:before,
+	a[href*="t.co"]:before { @include genericon-twitter; }
+	a[href*="facebook"]:before,
+	a[href*="fb.me"]:before { @include genericon-facebook; }
+	a[href*="wordpress"]:before,
+	a[href*="wp.me"]:before { @include genericon-wordpress; }
+	a[href*="google"]:before { @include genericon-googleplus; }
+	a[href*="linkedin"]:before,
+	a[href*="lnkd.in"]:before { @include genericon-linkedin; }
+	a[href*="pinterest"]:before { @include genericon-pinterest; }
+	a[href*="flickr"]:before { @include genericon-flickr; }
+	a[href*="vimeo"]:before { @include genericon-vimeo; }
+	a[href*="youtube"]:before,
+	a[href*="youtu.be"]:before { @include genericon-youtube; }
+	a[href*="tumblr"]:before { @include genericon-tumblr; }
+	a[href*="instagram"]:before { @include genericon-instagram; }
+	a[href*="codepen"]:before { @include genericon-codepen; }
+	a[href*="polldaddy"]:before { @include genericon-polldaddy; }
+	a[href*="path"]:before { @include genericon-path; }
+	a[href*="skype"]:before { @include genericon-skype; }
+	a[href*="digg"]:before { @include genericon-digg; }
+	a[href*="reddit"]:before { @include genericon-reddit; }
+	a[href*="stumbleupon"]:before { @include genericon-stumbleupon; }
+	a[href*="pocket"]:before { @include genericon-pocket; }
+	a[href*="dropbox"]:before { @include genericon-dropbox; }
+}
