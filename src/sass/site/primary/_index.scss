@@ -79,6 +79,11 @@
 }
 
 #river {
+	.hentry {
+		padding-bottom: $size__spacing-alt;
+		border-bottom: 1px dotted $color__border-abbr;
+	}
+
 	.entry-content {
 		margin-top: $size__spacing-alt;
 	}
