@@ -1,6 +1,6 @@
 .entry-content {
 	a,
-	&:visited {
+	a:visited {
 		color: $color__link-content;
 		text-decoration: none;
 		font-weight: bold;
