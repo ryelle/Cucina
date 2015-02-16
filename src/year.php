@@ -22,17 +22,17 @@ get_header(); ?>
 				<?php $current_year = get_the_date( 'Y' ); ?>
 
 				<?php if ( $prev_month !== $current_month || $prev_year !== $current_year || $i == 0  ) { ?>
-				<?php if ( $i > 0 ) echo '</div>'; ?>
-				<h2 class="page-title" ><?php the_time( 'F Y' ); ?></h2>
-				<div class="masonry">
+					<?php if ( $i > 0 ) echo '</div>'; // Close previous .masonry ?>
+					<h2 class="page-title" ><?php the_time( 'F Y' ); ?></h2>
+					<div class="masonry">
 				<?php } ?>
-				<?php
-					get_template_part( 'content', 'home' );
-				?>
+
+				<?php get_template_part( 'content', 'home' ); ?>
 
 				<?php $prev_month = get_the_date( 'm' ); $i++ ?>
 				<?php $prev_year = get_the_date( 'Y' ); ?>
 			<?php endwhile; ?>
+			</div><!-- last .masonry-->
 
 			<?php the_posts_navigation(); ?>
 

@@ -19,6 +19,10 @@ function cucina_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	if ( is_year() ) {
+		$classes[] = 'year-archive';
+	}
+
 	if ( is_singular() ) {
 		$classes[] = 'singular';
 
