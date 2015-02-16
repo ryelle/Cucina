@@ -40,7 +40,7 @@ add_filter( 'body_class', 'cucina_body_classes' );
  */
 function cucina_year_query( $query ){
 	if ( $query->is_main_query() && is_year() ) {
-		$query->set( 'posts_per_archive_page', 100 );
+		$query->set( 'posts_per_archive_page', 110 );
 	}
 }
 add_action( 'pre_get_posts', 'cucina_year_query' );
