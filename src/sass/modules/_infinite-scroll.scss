@@ -4,8 +4,15 @@
 	display: none;
 }
 
-.infinite-scroll .masonry {
-	padding-bottom: 75px;
+.infinite-scroll {
+	.masonry {
+		box-sizing: content-box;
+		padding-bottom: 60px;
+	}
+
+	.river {
+		padding-bottom: $size__spacing;
+	}
 }
 
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
@@ -22,7 +29,7 @@
 
 	.masonry & {
 		position: absolute;
-		bottom: 20px;
+		bottom: $size__spacing-alt;
 	}
 
 	span {

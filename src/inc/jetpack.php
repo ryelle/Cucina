@@ -15,6 +15,8 @@ function cucina_jetpack_setup() {
 		'container' => 'posts-container',
 		'render'    => 'cucina_infinite_scroll_render',
 		'footer'    => 'page',
+		'type'      => 'click',
+		'footer_widgets' => false,
 	);
 	add_theme_support( 'infinite-scroll', $infinite_args );
 

@@ -4,20 +4,30 @@
  * Initialize Masonry
  */
 ( function( $ ) {
-	var container = document.querySelector('.masonry');
+	var container = document.querySelectorAll('.masonry');
 	var msnry;
 
-	if ( ! container ) {
+	if ( ! container.length ) {
 		return;
 	}
 
 	// initialize Masonry after all images have loaded
 	imagesLoaded( container, function() {
-		msnry = new Masonry( container, {
-			itemSelector: '.hentry',
-			gutter: 35,
-			transitionDuration: 0
-		});
+		if ( container.length > 1 ){
+			$( container ).each( function( index, element ){
+				msnry = new Masonry( element, {
+					itemSelector: '.hentry',
+					gutter: 35,
+					transitionDuration: 0
+				});
+			});
+		} else {
+			msnry = new Masonry( container[0], {
+				itemSelector: '.hentry',
+				gutter: 35,
+				transitionDuration: 0
+			});
+		}
 	});
 
 	$( document ).on( 'post-load', function( event, response ){

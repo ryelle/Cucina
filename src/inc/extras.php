@@ -31,6 +31,28 @@ function cucina_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'cucina_body_classes' );
 
+/**
+ * The year archive should show a lot of posts.
+ */
+function cucina_year_query( $query ){
+	if ( $query->is_main_query() && is_year() ) {
+		$query->set( 'posts_per_archive_page', 100 );
+	}
+}
+add_action( 'pre_get_posts', 'cucina_year_query' );
+
+/**
+ * Use `year.php` for the year-by-month archive.
+ */
+function cucina_year_template( $template ){
+	if ( is_year() ) {
+		$templates = array( 'year.php' );
+		$template = locate_template( $templates );
+	}
+	return $template;
+}
+add_filter( 'date_template', 'cucina_year_template' );
+
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	/**
 	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
