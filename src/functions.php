@@ -76,7 +76,7 @@ function cucina_setup() {
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'cucina_custom_background_args', array(
 		'default-color' => 'ffffff',
-		'default-image' => get_template_directory_uri() . '/images/kiwis.png',
+		'default-image' => get_template_directory_uri() . '/images/cocina.gif',
 		'default-attachment' => 'fixed',
 	) ) );
 }
