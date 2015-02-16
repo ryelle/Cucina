@@ -16,6 +16,8 @@
 				return;
 			}
 
+			$( element ).find( " > .reply-connector" ).remove();
+
 			height = ( replies.eq(-1).offset().top - $( element ).offset().top ) + 1;
 			$( '<div>' ).addClass('reply-connector').prependTo( element ).css({ height: height + 'px' });
 		};
@@ -23,10 +25,8 @@
 	comments.each( addReplyConnectors );
 
 	$( ".comment-reply-link, #cancel-comment-reply-link" ).on( 'click', function(){
-		var comment = $( this ).closest( ".parent.comment" );
 		setTimeout( function(){
-			comment.find( ".reply-connector" ).remove();
-			addReplyConnectors( 0, comment );
+			comments.each( addReplyConnectors );
 		}, 100 );
 	});
 
