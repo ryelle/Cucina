@@ -111,7 +111,7 @@ function cucina_comment( $comment, $args, $depth ) { ?>
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( $args['has_children'] ? 'parent' : '' ); ?>>
 	<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 
-		<?php if ( 0 != $args['avatar_size'] ) : ?>
+		<?php if ( ( 'pingback' != $comment->comment_type ) && ( 0 != $args['avatar_size'] ) ) : ?>
 		<div class="comment-avatar">
 			<?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
 		</div>
@@ -127,6 +127,9 @@ function cucina_comment( $comment, $args, $depth ) { ?>
 
 		<footer class="comment-meta">
 			<div class="comment-metadata">
+				<?php if ( 'pingback' == $comment->comment_type ) : ?>
+					<?php printf( __( '<span class="says">from</span> %s' ), get_comment_author_link() ); ?>
+				<?php else : ?>
 				<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID, $args ) ); ?>"><time datetime="<?php comment_time( 'c' ); ?>"><?php printf( _x( '%s ago', 'time ago', 'cucina' ), human_time_diff( get_comment_time('U') ) ); ?></time></a>
 
 				<span class="comment-author vcard">
@@ -134,10 +137,10 @@ function cucina_comment( $comment, $args, $depth ) { ?>
 				</span><!-- .comment-author -->
 
 				<span class="reply">
-				<?php //comment_reply_link( array_merge( $args, array( 'add_below' => 'div-comment', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				<?php comment_reply_link( array_merge( $args, array( 'add_below' => 'div-comment', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 				</span><!-- .reply -->
 
-				<?php //edit_comment_link( __( 'Edit' ), ' <span class="edit-link">', '</span>' ); ?>
+				<?php endif; ?>
 			</div><!-- .comment-metadata -->
 		</footer><!-- .comment-meta -->
 
