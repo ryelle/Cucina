@@ -58,8 +58,8 @@
 
 .masonry {
 	.hentry {
+		width: calc( 50% - 18px );
 		max-width: 250px;
-		width: 100%;
 
 		a, a:visited {
 			color: white;
@@ -86,5 +86,22 @@
 
 	.entry-content {
 		margin-top: $size__spacing-alt;
+	}
+}
+
+@media screen and ( max-width: 650px ) {
+	.masonry .hentry {
+		width: 100%;
+		max-width: 100%;
+	}
+	.archive .masonry .hentry {
+		width: calc( 50% - 18px );
+	}
+}
+
+@media screen and ( max-width: 500px ) {
+	.archive .masonry .hentry {
+		width: 100%;
+		max-width: 100%;
 	}
 }
