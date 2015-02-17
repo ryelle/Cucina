@@ -28,6 +28,8 @@ function cucina_body_classes( $classes ) {
 
 		if ( has_post_thumbnail() ) {
 			$classes[] = 'has-image';
+		} else {
+			$classes[] = 'no-image';
 		}
 	}
 
