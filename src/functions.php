@@ -98,6 +98,16 @@ function cucina_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer', 'cucina' ),
+		'id'            => 'sidebar-2',
+		'description'   => __( 'Lives below your content, and is full-width.', 'cucina' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'cucina_widgets_init' );
 
