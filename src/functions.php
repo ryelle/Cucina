@@ -41,6 +41,9 @@ function cucina_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	// Add custom TinyMCE CSS
+	// add_editor_style( array( 'editor-style.css', cucina_fonts_url() ) );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -128,6 +131,79 @@ function cucina_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cucina_scripts' );
+
+/**
+ * Returns the Google font stylesheet URL, if available.
+ *
+ * The use of Sacramento and Raleway by default is localized.
+ * For languages that use characters not supported by either
+ * font, the font can be disabled.
+ *
+ * @return string Font stylesheet or empty string if disabled.
+ */
+function cucina_fonts_url() {
+	$fonts_url = '';
+
+	/* Translators: If there are characters in your language that are not
+	 * supported by Sacramento, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$sacramento = _x( 'on', 'Sacramento font: on or off', 'cucina' );
+
+	/* Translators: If there are characters in your language that are not
+	 * supported by Josefin Sans, translate this to 'off'. Do not translate into
+	 * your own language.
+	 */
+	$josefin = _x( 'on', 'Josefin Sans font: on or off', 'cucina' );
+
+	/* Translators: If there are characters in your language that are not
+	 * supported by Quattrocento Sans, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$quattrocento = _x( 'on', 'Quattrocento Sans font: on or off', 'cucina' );
+
+	if ( 'off' !== $sacramento || 'off' !== $josefin || 'off' !== $quattrocento ) {
+		$font_families = array();
+
+		if ( 'off' !== $sacramento ) {
+			$font_families[] = urlencode( 'Sacramento:400' );
+		}
+
+		if ( 'off' !== $josefin ) {
+			$font_families[] = urlencode( 'Josefin Sans:500,600,700' );
+		}
+
+		if ( 'off' !== $quattrocento ) {
+			$font_families[] = urlencode( 'Quattrocento Sans:500,600,700' );
+		}
+
+		$query_args = array(
+			'family' => implode( '|', $font_families ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+	}
+
+	return $fonts_url;
+}
+
+/**
+ * Loads our special font CSS file.
+ *
+ * To disable in a child theme, use wp_dequeue_style()
+ * function mytheme_dequeue_fonts() {
+ *     wp_dequeue_style( 'cucina-fonts' );
+ * }
+ * add_action( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11 );
+ *
+ * @return void
+ */
+function cucina_fonts() {
+	$fonts_url = cucina_fonts_url();
+	if ( ! empty( $fonts_url ) )
+		wp_enqueue_style( 'cucina-fonts', esc_url_raw( $fonts_url ), array(), null );
+}
+add_action( 'wp_enqueue_scripts', 'cucina_fonts' );
 
 /**
  * Implement the Custom Header feature.

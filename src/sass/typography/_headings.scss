@@ -1,6 +1,6 @@
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font__header;
-	font-weight: 600;
+	font-weight: $font__weight-bold;
 	clear: both;
 }
 
@@ -10,7 +10,7 @@ h1 {
 
 h2 {
 	@include font-size( 2.2 );
-	font-weight: 400;
+	font-weight: $font__weight-semibold;
 	color: $color__text-h2;
 }
 
@@ -43,6 +43,7 @@ h6 {
 .site-title {
 	margin-bottom: 20px;
 	padding-top: 25px;
+	font-family: $font__site-header;
 	@include font-size( 6.0 );
 	line-height: 1.3;
 
@@ -67,7 +68,7 @@ h6 {
 	line-height: 1;
 	background-color: $color__background-header;
 	color: white;
-	font-weight: 300;
+	font-weight: $font__weight-semibold;
 }
 
 .entry-title {
@@ -77,7 +78,7 @@ h6 {
 	line-height: 1;
 	background-color: $color__background-header-home;
 	color: white;
-	font-weight: 300;
+	font-weight: $font__weight-semibold;
 
 	.single &,
 	.page & {
@@ -104,7 +105,7 @@ h6 {
 .comment-reply-title,
 .no-comments {
 	@include font-size( 2.2 );
-	font-weight: 400;
+	font-weight: $font__weight-normal;
 	color: $color__text-h2;
 	text-transform: none;
 }
