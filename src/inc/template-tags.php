@@ -12,7 +12,7 @@
  */
 function cucina_tiled_layout() {
 	$use_tile = get_theme_mod( 'tiled_layout', 'yes' );
-	return $use_tile == 'yes';
+	return (bool) $use_tile;
 }
 
 /**

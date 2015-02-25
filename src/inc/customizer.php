@@ -21,7 +21,7 @@ function cucina_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'tiled_layout', array(
-		'default'           => 'yes',
+		'default'           => true,
 		'sanitize_callback' => 'cucina_sanitize_yesno',
 	) );
 
@@ -51,7 +51,7 @@ add_action( 'customize_preview_init', 'cucina_customize_preview_js' );
  */
 function cucina_sanitize_yesno( $maybebool ){
 	if ( $maybebool == true ){
-		return 'yes';
+		return true;
 	}
-	return 'no';
+	return false;
 }
