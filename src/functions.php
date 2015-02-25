@@ -5,6 +5,10 @@
  * @package Cucina
  */
 
+if ( ! defined( 'CUCINA_VERSION' ) ) {
+	define( 'CUCINA_VERSION', time() );
+}
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -48,7 +52,6 @@ function cucina_setup() {
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 * @link http://make.wordpress.org/core/2014/02/20/audio-video-2-0-update-playlists/
 	 */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 500, 500, true );
