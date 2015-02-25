@@ -45,6 +45,11 @@
 	p:last-of-type {
 		margin-bottom: 0;
 	}
+
+	.masonry & {
+		@include font-size(1.6);
+		line-height: 1.4;
+	}
 }
 
 .entry-image {
