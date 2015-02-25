@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 545; /* pixels */
+	$content_width = 535; /* pixels */
 }
 
 if ( ! function_exists( 'cucina_setup' ) ) :
@@ -50,10 +50,8 @@ function cucina_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 * @link http://make.wordpress.org/core/2014/02/20/audio-video-2-0-update-playlists/
 	 */
-	add_post_type_support( 'attachment:audio', 'thumbnail' );
-	add_post_type_support( 'attachment:video', 'thumbnail' );
-	add_theme_support( 'post-thumbnails', array( 'post', 'page', 'attachment:audio', 'attachment:video' ) );
-	set_post_thumbnail_size( 545, 545, true );
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 500, 500, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
