@@ -23,16 +23,15 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-		<?php if ( get_header_image() ) : ?>
-			<div class="site-logo">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width/2 ); ?>" height="<?php echo esc_attr( get_custom_header()->height/2 ); ?>" alt="">
-				</a>
-				<h1 class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			</div>
-		<?php else: ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<?php endif; // End header image check. ?>
+			<h1 class="site-title <?php if ( ! display_header_text() ) echo 'screen-reader-text'; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+
+			<?php if ( get_header_image() ) : ?>
+				<div class="site-logo">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+					</a>
+				</div>
+			<?php endif; // End header image check. ?>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
