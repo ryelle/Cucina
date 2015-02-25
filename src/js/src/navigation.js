@@ -1,9 +1,13 @@
+/* global document, jQuery */
+
 /**
  * navigation.js
  *
  * Handles toggling the navigation menu for small screens.
  */
 ( function( $ ) {
+	'use strict';
+
 	var container, button, menu;
 
 	container = document.getElementById( 'site-navigation' );

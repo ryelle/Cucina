@@ -1,3 +1,5 @@
+/* global wp, jQuery */
+
 /**
  * Theme Customizer enhancements for a better user experience.
  *
@@ -5,6 +7,8 @@
  */
 
 ( function( $ ) {
+	'use strict';
+
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {

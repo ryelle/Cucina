@@ -1,11 +1,15 @@
+/* global document, jQuery, Masonry, imagesLoaded */
+
 /**
  * masonry.js
  *
  * Initialize Masonry
  */
 ( function( $ ) {
-	var container = document.querySelectorAll('.masonry');
-	var msnry;
+	'use strict';
+
+	var container = document.querySelectorAll('.masonry'),
+		msnry;
 
 	if ( ! container.length ) {
 		return;
