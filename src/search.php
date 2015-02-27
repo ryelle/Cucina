@@ -37,6 +37,8 @@ get_header(); ?>
 
 	<?php else : ?>
 
+		<?php get_template_part( 'partial/header', 'none' ); ?>
+
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 
