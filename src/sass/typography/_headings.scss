@@ -63,7 +63,7 @@ h6 {
 }
 
 .page-title {
-	margin-bottom: 30px;
+	margin: 0 0 30px;
 	padding: 20px 30px 15px;
 	line-height: 1;
 	background-color: $color__background-header;
@@ -80,8 +80,8 @@ h6 {
 	color: white;
 	font-weight: $font__weight-semibold;
 
-	.single &,
-	.page & {
+	body.single &,
+	body.page & {
 		background-color: $color__background-header;
 	}
 

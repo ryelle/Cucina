@@ -12,9 +12,9 @@
 }
 
 .singular .entry-meta {
+	margin: $size__gutter/2 0;
 	@include font-size( 1.2 );
 	text-transform: uppercase;
-	margin: 30px 0 30px;
 }
 
 .byline {

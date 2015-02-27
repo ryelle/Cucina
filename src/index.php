@@ -18,7 +18,7 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-				<div id="posts-container" class="masonry">
+				<div class="layout <?php echo cucina_tiled_layout()? 'masonry': 'river'; ?>" id="posts-container">
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 

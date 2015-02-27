@@ -94,6 +94,17 @@
 	}
 }
 
+body.search {
+	.entry-title {
+		margin-bottom: $size__spacing-alt;
+	}
+	.entry-meta {
+		margin: $size__spacing-alt 0;
+		@include font-size( 1.2 );
+		text-transform: uppercase;
+	}
+}
+
 @media screen and ( max-width: 650px ) {
 	.masonry .hentry {
 		width: 100%;
