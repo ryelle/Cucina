@@ -22,13 +22,13 @@
 	}
 }
 
-.site-content .widget-area {
+.site-content .sidebar {
 	float: right;
 	overflow: hidden;
 	width: $size__site-sidebar;
 }
 
-.single-post .widget-area {
+.single-post .sidebar {
 	margin-top: -50px;
 }
 

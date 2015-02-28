@@ -112,6 +112,16 @@ function cucina_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( '404 Page', 'cucina' ),
+		'id'            => 'sidebar-3',
+		'description'   => __( 'Use this space to give visitors suggestions when they end up on a "Not Found" page.', 'cucina' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'cucina_widgets_init' );
 
