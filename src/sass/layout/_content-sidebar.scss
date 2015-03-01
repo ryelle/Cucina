@@ -37,6 +37,21 @@
 	margin-top: $size__spacing;
 }
 
+.not-found-widget-area {
+	.widget {
+		float: left;
+		width: 50%;
+
+		&:nth-of-type(odd) {
+			clear: left;
+			padding-right: $size__gutter/2;
+		}
+		&:nth-of-type(even) {
+			padding-left: $size__gutter/2;
+		}
+	}
+}
+
 .site-footer {
 	clear: both;
 	width: 100%;
@@ -63,7 +78,7 @@
 		}
 	}
 
-	.site-content .widget-area {
+	.site-content .sidebar {
 		width: $size__site-sidebar;
 	}
 }
@@ -79,12 +94,12 @@
 		padding-right: 0;
 	}
 
-	.site-content .widget-area {
+	.site-content .sidebar {
 		float: none;
 		width: 100%;
 	}
 
-	.single-post .widget-area {
+	.single-post .sidebar {
 		margin-top: $size__spacing;
 	}
 }
