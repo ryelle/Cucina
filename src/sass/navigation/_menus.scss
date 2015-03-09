@@ -107,6 +107,18 @@
 /* Small menu. */
 .menu-toggle {
 	display: none;
+	width: 100%;
+	border: 1px solid transparent;
+	background-color: transparent;
+	color: $color__border-button;
+
+	&:hover,
+	&:active,
+	&:focus {
+		outline: none;
+		color: $color__border-button-hover;
+		border-color: $color__border-button-hover;
+	}
 }
 
 @media screen and (max-width: 600px) {
