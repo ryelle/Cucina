@@ -14,6 +14,7 @@ function cucina_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'background_image' )->transport = 'refresh';
 
 	$wp_customize->add_section( 'cucina_layout' , array(
 		'title'      => __( 'Layout', 'cucina' ),
