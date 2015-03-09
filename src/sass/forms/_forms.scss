@@ -11,3 +11,21 @@
 		@include screen-reader-text;
 	}
 }
+
+.comment-form {
+	label {
+		display: inline-block;
+		margin-right: -4px;
+		min-width: 35%;
+	}
+
+	input:not( [type='submit'] ) {
+		min-width: 65%;
+	}
+}
+
+.comment-form-comment {
+	label {
+		margin-bottom: 5px;
+	}
+}

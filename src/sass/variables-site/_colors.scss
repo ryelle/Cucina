@@ -17,9 +17,11 @@ $color__text-h2: #f7a581;
 $color__text-h3: #f1b674;
 $color__text-screen: #21759b;
 $color__text-button: #fff;
-$color__text-input: darken( #f3cdae, 15% );
-$color__text-input-focus: darken( #f3cdae, 25% );
+
+$color__text-input: #6c5437;
+$color__text-input-focus: darken( $color__text-input, 10% );
 $color__text-input-placeholder: #f3cdae;
+$color__text-input-search: darken( #f3cdae, 15% );
 
 $color__link: #78dbaa;
 $color__link-menu: #a18058;

@@ -10,8 +10,12 @@ textarea {
 	&:focus {
 		outline: none;
 		color: $color__text-input-focus;
-		border: 1px solid darken( $color__border-input, 15% );
+		border-color: darken( $color__border-input, 15% );
 	}
+}
+
+input[type="search"] {
+	color: $color__text-input-search;
 }
 
 ::-webkit-input-placeholder {
@@ -34,7 +38,7 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	padding: $size__spacing-alt/2 $size__spacing/2 ($size__spacing-alt/2)-5;
+	padding: $size__spacing-alt/2 $size__spacing-alt 5px;
 	max-width: 100%;
 	box-sizing: border-box;
 }

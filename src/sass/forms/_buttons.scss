@@ -8,7 +8,7 @@ input[type="submit"] {
 	color: $color__text-button;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-	@include font-size(1.2);
+	@include font-size(1.5);
 	line-height: 1;
 	padding: 7px 12px 5px;
 
