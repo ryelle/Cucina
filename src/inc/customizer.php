@@ -31,6 +31,19 @@ function cucina_customize_register( $wp_customize ) {
 		'type'        => 'checkbox',
 		'description' => __( 'When checked, front page displays posts as image/title cards. Unchecked, posts are a single stream with excerpts of the post content.', 'cucina' ),
 	) );
+
+	$wp_customize->add_setting( 'background_size', array(
+		'default'           => true,
+		'sanitize_callback' => 'cucina_sanitize_yesno',
+		'theme_supports'    => 'custom-background',
+	) );
+
+	$wp_customize->add_control( 'background_size', array(
+		'label'       => __( 'This image is retina', 'cucina' ),
+		'section'     => 'background_image',
+		'type'        => 'checkbox',
+		'description' => __( 'When selected, the background image is downsized by 50%, so that is displays at 2x depth on retina screens.', 'cucina' ),
+	) );
 }
 add_action( 'customize_register', 'cucina_customize_register' );
 

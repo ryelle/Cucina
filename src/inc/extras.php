@@ -59,6 +59,29 @@ function cucina_year_template( $template ){
 }
 add_filter( 'date_template', 'cucina_year_template' );
 
+/**
+ * If necessary, resize the background image for retina screens.
+ */
+function cucina_retina_backgrounds(){
+	$is_retina = (bool) get_theme_mod( 'background_size' );
+	if ( $is_retina ) {
+		$image = get_background_image();
+		if ( ! $image ){
+			return;
+		}
+
+		$metadata = getimagesize( $image );
+		if ( ! is_array( $metadata ) ) {
+			return;
+		}
+
+		$width = $metadata[0];
+		$height = $metadata[1];
+		printf( '<style>body{ background-size: %dpx %dpx; }</style>', $width/2, $height/2 );
+	}
+}
+add_filter( 'wp_head', 'cucina_retina_backgrounds' );
+
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	/**
 	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
