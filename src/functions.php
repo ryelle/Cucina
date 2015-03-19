@@ -129,11 +129,11 @@ add_action( 'widgets_init', 'cucina_widgets_init' );
  * Enqueue scripts and styles.
  */
 function cucina_scripts() {
-	wp_enqueue_style( 'cucina-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'cucina-style', get_stylesheet_uri(), array(), CUCINA_VERSION );
 
 	wp_enqueue_script( 'imagesloaded', get_template_directory_uri() . '/js/imagesloaded.js', array(), '3.1.8', true );
 
-	wp_enqueue_script( 'cucina', get_template_directory_uri() . '/js/cucina.js', array( 'masonry', 'imagesloaded', 'jquery' ), '20120206', true );
+	wp_enqueue_script( 'cucina', get_template_directory_uri() . '/js/cucina.js', array( 'masonry', 'imagesloaded', 'jquery' ), CUCINA_VERSION, true );
 
 	wp_enqueue_script( 'cucina-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
