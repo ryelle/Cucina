@@ -1,0 +1,27 @@
+
+@media screen and ( max-width: 600px ) {
+	body {
+		padding-left: 0;
+		padding-right: 0;
+		background-image: none !important; // Don't bother loading the image.
+	}
+
+	.site {
+		margin: 0;
+		padding: 0;
+	}
+
+	.site-header {
+		position: relative;
+		background-color: $color__background-header-mobile;
+
+		a, a:link, a:active, a:hover, a:visited, a:focus {
+			color: $color__text-header-site-mobile;
+		}
+	}
+
+	.site-title {
+		padding-top: $size__spacing-alt;
+		@include font-size( 3.2 );
+	}
+}

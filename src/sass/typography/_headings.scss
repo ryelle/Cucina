@@ -42,7 +42,7 @@ h6 {
 
 .site-title {
 	margin-top: 0;
-	margin-bottom: 20px;
+	margin-bottom: $size__spacing-alt;
 	font-family: $font__site-header;
 	@include font-size( 6.0 );
 	line-height: 1.3;

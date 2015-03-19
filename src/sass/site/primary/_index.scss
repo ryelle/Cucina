@@ -62,6 +62,8 @@
 }
 
 .masonry {
+	padding-bottom: 60px;
+
 	.hentry {
 		width: calc( 50% - 18px );
 		max-width: 250px;
@@ -105,7 +107,7 @@ body.search {
 	}
 }
 
-@media screen and ( max-width: 650px ) {
+@media screen and ( max-width: 650px ) and ( min-width: 601px ) {
 	.masonry .hentry {
 		width: 100%;
 		max-width: 100%;
@@ -115,8 +117,22 @@ body.search {
 	}
 }
 
+@media screen and ( max-width: 600px ) {
+	.masonry .hentry {
+		width: calc( 50% - 18px );
+		max-width: 100%;
+	}
+}
+
 @media screen and ( max-width: 500px ) {
 	.archive .masonry .hentry {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+@media screen and ( max-width: 450px ) {
+	.masonry .hentry {
 		width: 100%;
 		max-width: 100%;
 	}
