@@ -16,6 +16,9 @@ function cucina_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'background_image' )->transport = 'refresh';
 
+	$wp_customize->get_control( 'header_textcolor' )->priority = 10;
+	$wp_customize->get_control( 'background_color' )->priority = 20;
+
 	$wp_customize->add_setting( 'desc_textcolor', array(
 		'default'           => apply_filters( 'cucina_default_desc_color', '8c785e' ),
 		'transport'         => 'postMessage',
@@ -26,6 +29,7 @@ function cucina_customize_register( $wp_customize ) {
 		'label'      => __( 'Description Color', 'cucina' ),
 		'section'    => 'colors',
 		'settings'   => 'desc_textcolor',
+		'priority'   => 15,
 	) ) );
 
 	$wp_customize->add_section( 'cucina_layout' , array(
