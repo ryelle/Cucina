@@ -32,6 +32,8 @@
 					</a>
 				</div>
 			<?php endif; // End header image check. ?>
+
+			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">

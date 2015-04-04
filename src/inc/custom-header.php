@@ -25,18 +25,15 @@
 function cucina_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'cucina_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000000',
+		'default-text-color'     => 'f6986f',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'cucina_header_style',
-		'admin-head-callback'    => 'cucina_admin_header_style',
-		'admin-preview-callback' => 'cucina_admin_header_image',
+		'wp-head-callback'       => 'cucina_header_style'
 	) ) );
 }
 add_action( 'after_setup_theme', 'cucina_custom_header_setup' );
 
-if ( ! function_exists( 'cucina_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
@@ -44,69 +41,27 @@ if ( ! function_exists( 'cucina_header_style' ) ) :
  */
 function cucina_header_style() {
 	$header_text_color = get_header_textcolor();
+	$default_desc_color = apply_filters( 'cucina_default_desc_color', '8c785e' );
+	$desc_text_color = ltrim( get_theme_mod( 'desc_textcolor', $default_desc_color ), '#' );
+	$colors_css = '';
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == $header_text_color || 'blank' == $header_text_color ) {
-		return;
+	if ( HEADER_TEXTCOLOR !== $header_text_color && 'blank' !== $header_text_color ) {
+		$colors_css .= sprintf(
+			".site-title a:link, .site-title a:active, .site-title a:hover, .site-title a:visited { color: #%s; } ",
+			esc_attr( $header_text_color )
+		);
 	}
 
-	// If we get this far, we have custom styles. Let's do this.
-	?>
-	<style type="text/css">
-		.site-title a,
-		.site-description {
-			color: #<?php echo esc_attr( $header_text_color ); ?>;
-		}
-	</style>
-	<?php
-}
-endif; // cucina_header_style
+	if ( $default_desc_color !== $desc_text_color ) {
+		$colors_css .= sprintf(
+			".site-description { color: #%s; } ",
+			esc_attr( $desc_text_color )
+		);
+	}
 
-if ( ! function_exists( 'cucina_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * @see cucina_custom_header_setup().
- */
-function cucina_admin_header_style() {
-?>
-	<style type="text/css">
-		.appearance_page_custom-header #headimg {
-			border: none;
-		}
-		#headimg h1,
-		#desc {
-		}
-		#headimg h1 {
-		}
-		#headimg h1 a {
-		}
-		#desc {
-		}
-		#headimg img {
-		}
-	</style>
-<?php
+	if ( ! empty( $colors_css ) ) {
+		printf( '<style type="text/css">%s</style>', $colors_css );
+	}
 }
-endif; // cucina_admin_header_style
-
-if ( ! function_exists( 'cucina_admin_header_image' ) ) :
-/**
- * Custom header image markup displayed on the Appearance > Header admin panel.
- *
- * @see cucina_custom_header_setup().
- */
-function cucina_admin_header_image() {
-	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
-?>
-	<div id="headimg">
-		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-		<?php if ( get_header_image() ) : ?>
-		<img src="<?php header_image(); ?>" alt="">
-		<?php endif; ?>
-	</div>
-<?php
-}
-endif; // cucina_admin_header_image

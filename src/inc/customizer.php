@@ -16,6 +16,18 @@ function cucina_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'background_image' )->transport = 'refresh';
 
+	$wp_customize->add_setting( 'desc_textcolor', array(
+		'default'           => apply_filters( 'cucina_default_desc_color', '8c785e' ),
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'desc_textcolor', array(
+		'label'      => __( 'Description Color', 'cucina' ),
+		'section'    => 'colors',
+		'settings'   => 'desc_textcolor',
+	) ) );
+
 	$wp_customize->add_section( 'cucina_layout' , array(
 		'title'      => __( 'Layout', 'cucina' ),
 		'priority'   => 20,

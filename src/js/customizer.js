@@ -9,6 +9,9 @@
 ( function( $ ) {
 	'use strict';
 
+	var header = '.site-title a:link, .site-title a:active, .site-title a:hover, .site-title a:visited',
+	    description = '.site-description';
+
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -27,7 +30,15 @@
 				$( '.site-title, .site-description' ).addClass('screen-reader-text');
 			} else {
 				$( '.site-title, .site-description' ).removeClass('screen-reader-text');
+				$( header ).css({ color: to });
 			}
+		} );
+	} );
+
+	// Description text color.
+	wp.customize( 'desc_textcolor', function( value ) {
+		value.bind( function( to ) {
+			$( description ).css({ color: to });
 		} );
 	} );
 } )( jQuery );

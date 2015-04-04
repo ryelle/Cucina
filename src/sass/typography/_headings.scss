@@ -47,9 +47,14 @@ h6 {
 	@include font-size( 6.0 );
 	line-height: 1.3;
 
-	a, a:link, a:active, a:hover, a:visited, a:focus {
+	a:link, a:active, a:hover, a:visited {
 		color: $color__text-header-site;
 		text-decoration: none;
+	}
+
+	a:focus {
+		outline: none;
+		text-decoration: underline;
 	}
 }
 
