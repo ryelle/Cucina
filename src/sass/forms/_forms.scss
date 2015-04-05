@@ -29,3 +29,12 @@
 		margin-bottom: 5px;
 	}
 }
+
+.post-password-form {
+	label {
+		text-transform: uppercase;
+	}
+	input[type="password"] {
+		margin-left: 20px;
+	}
+}

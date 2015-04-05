@@ -10,7 +10,7 @@ input[type="submit"] {
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	@include font-size(1.5);
 	line-height: 1;
-	padding: 7px 12px 5px;
+	padding: 14px 20px 10px;
 
 	&:hover,
 	&:focus {
