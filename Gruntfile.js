@@ -67,6 +67,16 @@ module.exports = function(grunt) {
 			}
 		},
 
+		autoprefixer: {
+			options: {},
+			dev: {
+				src: [ SOURCE_DIR + 'style.css', SOURCE_DIR + 'editor-style.css', SOURCE_DIR + 'rtl.css' ]
+			},
+			dist: {
+				src: [ BUILD_DIR + 'style.css', BUILD_DIR + 'editor-style.css', BUILD_DIR + 'rtl.css' ]
+			}
+		},
+
 		concat: {
 			dev: {
 				src: [ SOURCE_DIR + 'js/src/*.js' ],
@@ -92,7 +102,7 @@ module.exports = function(grunt) {
 		watch: {
 			css: {
 				files: [SOURCE_DIR + 'sass/**'],
-				tasks: ['sass:dev']
+				tasks: ['sass:dev', 'autoprefixer:dev']
 			},
 			js: {
 				files: [SOURCE_DIR + 'js/src/**'],
@@ -104,7 +114,7 @@ module.exports = function(grunt) {
 	// Register tasks.
 
 	// Build task.
-	grunt.registerTask('dev', ['sass:dev', 'concat:dev']);
+	grunt.registerTask('dev', ['sass:dev', 'autoprefixer:dev', 'concat:dev']);
 	grunt.registerTask('build', ['clean:all', 'copy:all', 'sass:dist', 'concat:dist', 'clean:dist' ]);
 	grunt.registerTask('publish', ['build', 'compress:main']);
 
