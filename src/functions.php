@@ -167,12 +167,6 @@ function cucina_fonts_url() {
 	$sacramento = _x( 'on', 'Sacramento font: on or off', 'cucina' );
 
 	/* Translators: If there are characters in your language that are not
-	 * supported by Josefin Sans, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
-	$josefin = _x( 'on', 'Josefin Sans font: on or off', 'cucina' );
-
-	/* Translators: If there are characters in your language that are not
 	 * supported by Quattrocento Sans, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
@@ -183,10 +177,6 @@ function cucina_fonts_url() {
 
 		if ( 'off' !== $sacramento ) {
 			$font_families[] = urlencode( 'Sacramento:400' );
-		}
-
-		if ( 'off' !== $josefin ) {
-			$font_families[] = urlencode( 'Josefin Sans:700,700italic' );
 		}
 
 		if ( 'off' !== $quattrocento ) {
