@@ -82,9 +82,14 @@ function cucina_use_photon( $html, $post_id, $post_thumbnail_id, $size, $attr ){
 			$w = $cucina_image_sizes[$size]['width'];
 			$h = $cucina_image_sizes[$size]['height'];
 		}
-		$photon_url = apply_filters( 'jetpack_photon_url', $url, array( 'w' => $w, 'h' => $h ) );
+		if ( $w > 3000 || $h > 3000 ) {
+			$photon_url = apply_filters( 'jetpack_photon_url', $url, array( 'w' => $w, 'h' => $h ) );
+		} else {
+			$photon_url = apply_filters( 'jetpack_photon_url', $url, array( 'resize' => array( $w, $h ) ) );
+		}
 
 		$html = str_replace( $url, $photon_url, $html );
+		$html = preg_replace( '#(?<=\s)(width|height)=["|\']?[\d%]+["|\']?\s?#i', '', $html );
 	}
 	return $html;
 }
