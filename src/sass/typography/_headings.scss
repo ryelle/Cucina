@@ -13,11 +13,14 @@ h1 {
 h2 {
 	@include font-size( 2.2 );
 	color: $color__text-h2;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 h3 {
-	@include font-size( 1.4 );
+	@include font-size( 1.5 );
 	text-transform: uppercase;
+	letter-spacing: 1px;
 	color: $color__text-h3;
 }
 
