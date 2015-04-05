@@ -49,3 +49,21 @@ big {
 	@include font-size( 1.5 );
 	line-height: 1.5;
 }
+
+.entry-content table {
+	border: 1px solid $color__border-table;
+	border-bottom: none;
+
+	th, td {
+		padding: 7px 5px 3px;
+		border-bottom: 1px solid $color__border-table;
+	}
+
+	th {
+		@include font-size( 1.6 );
+		font-weight: $font__weight-semibold;
+		text-transform: uppercase;
+		letter-spacing: .05em;
+		color: $color__text-header-2;
+	}
+}
