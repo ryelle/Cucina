@@ -9,7 +9,11 @@
 
 	<?php if ( has_post_thumbnail() ) : ?>
 	<div class="entry-image">
-		<?php the_post_thumbnail( 'square-thumbnail' ); ?>
+		<?php if ( ! is_home() ) {
+			the_post_thumbnail( array( 270, 270 ) );
+		} else {
+			the_post_thumbnail( 'square-thumbnail' );
+		} ?>
 	</div>
 	<?php endif; ?>
 
