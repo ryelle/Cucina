@@ -75,7 +75,10 @@ function cucina_use_photon( $html, $post_id, $post_thumbnail_id, $size, $attr ){
 	$cucina_image_sizes = cucina_image_sizes();
 	if ( preg_match("/src=\"(.*?)\"/", $html, $match ) && isset( $match[1] ) ) {
 		$url = $match[1];
-		if ( 'full' == $size ) {
+		if ( is_array( $size ) ) {
+			$w = $size[0];
+			$h = $size[1];
+		} elseif ( 'full' == $size ) {
 			$w = 880;
 			$h = 9999;
 		} else {
