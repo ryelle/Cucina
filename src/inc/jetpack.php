@@ -82,7 +82,7 @@ function cucina_use_photon( $html, $post_id, $post_thumbnail_id, $size, $attr ){
 			$w = $cucina_image_sizes[$size]['width'];
 			$h = $cucina_image_sizes[$size]['height'];
 		}
-		$photon_url = apply_filters( 'jetpack_photon_url', $url, array( 'resize' => array( $w, $h ) ) );
+		$photon_url = apply_filters( 'jetpack_photon_url', $url, array( 'w' => $w, 'h' => $h ) );
 
 		$html = str_replace( $url, $photon_url, $html );
 	}
