@@ -115,7 +115,7 @@ module.exports = function(grunt) {
 
 	// Build task.
 	grunt.registerTask('dev', ['sass:dev', 'autoprefixer:dev', 'concat:dev']);
-	grunt.registerTask('build', ['clean:all', 'copy:all', 'sass:dist', 'concat:dist', 'clean:dist' ]);
+	grunt.registerTask('build', ['clean:all', 'copy:all', 'sass:dist', 'autoprefixer:dist', 'concat:dist', 'clean:dist' ]);
 	grunt.registerTask('publish', ['build', 'compress:main']);
 
 	// Default task.
