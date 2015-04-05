@@ -46,7 +46,7 @@ function cucina_setup() {
 	add_theme_support( 'title-tag' );
 
 	// Add custom TinyMCE CSS
-	// add_editor_style( array( 'editor-style.css', cucina_fonts_url() ) );
+	add_editor_style( array( 'editor-style.css', cucina_fonts_url() ) );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.

@@ -19,7 +19,8 @@ module.exports = function(grunt) {
 				src: [
 					'node_modules',
 					'undersass',
-					'README.md'
+					'README.md',
+					'*.css.map'
 				]
 			}
 		},
@@ -46,24 +47,28 @@ module.exports = function(grunt) {
 		sass: {
 			dev: {
 				options: {
-					sourcemap: true
+					sourcemap: 'none'
 				},
-				expand: true,
-				cwd: SOURCE_DIR + 'sass/',
-				dest: SOURCE_DIR,
-				ext: '.css',
-				src: [ 'style.scss' ]
+				files: [{
+					expand: true,
+					cwd: SOURCE_DIR + 'sass/',
+					dest: SOURCE_DIR,
+					ext: '.css',
+					src: [ 'style.scss', 'editor-style.scss' ]
+				}]
 			},
 			dist: {
 				options: {
 					noCache: true,
-					sourcemap: false
+					sourcemap: 'none'
 				},
-				expand: true,
-				cwd: SOURCE_DIR + 'sass/',
-				dest: BUILD_DIR,
-				ext: '.css',
-				src: [ 'style.scss' ]
+				files: [{
+					expand: true,
+					cwd: SOURCE_DIR + 'sass/',
+					dest: BUILD_DIR,
+					ext: '.css',
+					src: [ 'style.scss', 'editor-style.scss' ]
+				}]
 			}
 		},
 

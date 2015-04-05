@@ -1,0 +1,24 @@
+/*
+  Editor style for Cucina
+*/
+
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+html {
+	font-family: sans-serif;
+	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust:     100%;
+	text-rendering: optimizeLegibility;
+}
+
+@import "typography/typography";
+@import "elements/elements";
+@import "modules/alignments";
+@import "modules/recipes";
+@import "media/media";
+
+body#tinymce {
+	-webkit-font-smoothing: subpixel-antialiased !important;
+}
