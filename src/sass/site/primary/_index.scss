@@ -21,7 +21,7 @@
 		padding: 20px 15px 15px;
 		width: 90px;
 		@include font-size( 3.5 );
-		font-weight: bold;
+		font-weight: $font__weight-bold;
 		line-height: 30px;
 		text-align: center;
 		background: $color__background-header;

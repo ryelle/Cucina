@@ -1,6 +1,8 @@
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font__header;
-	font-weight: $font__weight-bold;
+	font-weight: $font__weight-normal;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: "kern" 1;
 	clear: both;
 }
 
@@ -10,7 +12,6 @@ h1 {
 
 h2 {
 	@include font-size( 2.2 );
-	font-weight: $font__weight-semibold;
 	color: $color__text-h2;
 }
 
@@ -85,7 +86,6 @@ h6 {
 	line-height: 1;
 	background-color: $color__background-header;
 	color: white;
-	font-weight: $font__weight-semibold;
 }
 
 .entry-title {
@@ -95,7 +95,6 @@ h6 {
 	line-height: 1;
 	background-color: $color__background-header-home;
 	color: white;
-	font-weight: $font__weight-semibold;
 
 	body.single &,
 	body.page & {
@@ -122,7 +121,6 @@ h6 {
 .comment-reply-title,
 .no-comments {
 	@include font-size( 2.2 );
-	font-weight: $font__weight-normal;
 	color: $color__text-h2;
 	text-transform: none;
 }

@@ -3,7 +3,7 @@
 	a:visited {
 		color: $color__link-content;
 		text-decoration: none;
-		font-weight: bold;
+		font-weight: $font__weight-bold;
 	}
 
 	a:hover,
@@ -15,7 +15,7 @@
 
 .read-more,
 .widget a {
-	font-weight: bold;
+	font-weight: $font__weight-bold;
 }
 
 a,
