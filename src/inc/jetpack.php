@@ -25,6 +25,11 @@ function cucina_jetpack_setup() {
 		'max_posts'  => 1,
 		'post_types' => array( 'post' ),
 	) );
+
+	$args = array(
+		'size' => 'full',
+	);
+	add_theme_support( 'site-logo', $args );
 }
 add_action( 'after_setup_theme', 'cucina_jetpack_setup' );
 
