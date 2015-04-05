@@ -36,13 +36,9 @@ h6 {
 	text-align: center;
 }
 
-.site-header-img {
-	margin-bottom: $size__spacing;
-}
-
 .site-title {
 	margin-top: 0;
-	margin-bottom: $size__spacing-alt;
+	margin-bottom: 10px;
 	font-family: $font__site-header;
 	@include font-size( 6.0 );
 	line-height: 1.3;
@@ -56,6 +52,22 @@ h6 {
 		outline: none;
 		text-decoration: underline;
 	}
+}
+
+.site-logo {
+	margin-bottom: 40px;
+}
+
+.site-description {
+	margin-bottom: 40px;
+	@include font-size( 1.4 );
+	color: $color__text-description;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.site-header-img {
+	margin-bottom: $size__spacing;
 }
 
 .page-header {
