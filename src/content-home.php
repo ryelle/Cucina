@@ -9,7 +9,7 @@
 
 	<?php if ( has_post_thumbnail() ) : ?>
 	<div class="entry-image">
-		<?php the_post_thumbnail(); ?>
+		<?php the_post_thumbnail( 'square-thumbnail' ); ?>
 	</div>
 	<?php endif; ?>
 

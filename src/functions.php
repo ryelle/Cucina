@@ -55,6 +55,8 @@ function cucina_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 535, 535, true ); // 535 for the width of the river view
+	add_image_size( 'square-thumbnail', 250, 250, true );
+	add_image_size( 'page-header', 880, 9999 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
