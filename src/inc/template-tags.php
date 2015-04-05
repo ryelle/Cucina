@@ -128,20 +128,20 @@ function cucina_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( __( ', ', 'cucina' ) );
 		if ( $categories_list && cucina_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'cucina' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'cucina' ) . '</span> ', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', 'cucina' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'cucina' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'cucina' ) . '</span> ', $tags_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
 		comments_popup_link( __( 'Leave a comment', 'cucina' ), __( '1 Comment', 'cucina' ), __( '% Comments', 'cucina' ) );
-		echo '</span>';
+		echo '</span> ';
 	}
 }
 endif;
