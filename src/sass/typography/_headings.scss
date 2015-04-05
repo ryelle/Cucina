@@ -61,6 +61,7 @@ h4, h5, h6 {
 }
 
 .site-description {
+	margin-top: -10px;
 	margin-bottom: 40px;
 	@include font-size( 1.4 );
 	color: $color__text-description;
